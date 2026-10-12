@@ -3,6 +3,7 @@ const app = express();
 const db = require("./db");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
+const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("Welcome to the Hotel Management API");
@@ -16,7 +17,7 @@ const menuRoutes = require("./routes/menuRoute");
 app.use("/person", personRoutes);
 app.use("/menu", menuRoutes);
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 // const port = 3000;
