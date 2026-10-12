@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     res.status(200).json(persons);
   } catch (error) {
     console.error("Error fetching persons:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal Server error" });
   }
 });
 // POST post data to person collection
@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
     res.status(201).json(response);
   } catch (error) {
     console.error("Error saving data:", error);
-    res.status(400).json({ error: "Internal server error" });
+    res.status(400).json({ error: "Internal Server error" });
   }
 });
 // GET get data from person collection by work type
@@ -42,7 +42,7 @@ router.get("/:workType", async (req, res) => {
     }
   } catch (error) {
     console.error("Error fetching persons by work type:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal Server error" });
   }
 });
 // PUT update data in person collection by ID
@@ -61,7 +61,7 @@ router.put("/:id", async (req, res) => {
     res.status(200).json(response);
   } catch (error) {
     console.error("Error updating person:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal Server error" });
   }
 });
 // DELETE delete data from person collection by ID
@@ -76,7 +76,7 @@ router.delete("/:id", async (req, res) => {
     res.status(200).json({ message: "Person deleted successfully" });
   } catch (error) {
     console.error("Error deleting person:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal Server error" });
   }
 });
 module.exports = router;
