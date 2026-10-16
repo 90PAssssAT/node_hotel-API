@@ -19,7 +19,7 @@ app.use(passport.initialize());
 // };
 // app.use(logRequest);
 
-const localAuthMiddleware = passport.authenticate("local", { session: false });
+// const localAuthMiddleware = passport.authenticate("local", { session: false });
 app.get("/", (req, res) => {
   res.send("Welcome to the Hotel Management API");
 });
@@ -29,7 +29,8 @@ const personRoutes = require("./routes/personRoute");
 const menuRoutes = require("./routes/menuRoute");
 
 // use the routes
-app.use("/person", localAuthMiddleware, personRoutes);
+// app.use("/person", localAuthMiddleware, personRoutes); // add middleware to protect the person routes require username and password in the request body
+app.use("/person", personRoutes);
 app.use("/menu", menuRoutes);
 
 app.listen(PORT, () => {
